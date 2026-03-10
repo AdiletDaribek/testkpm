@@ -1,93 +1,433 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SafeDecor — Маркетплейс мебели с безопасной сделкой</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SafeMebel — Маркетплейс мебели с безопасной сделкой</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
 </head>
 <body>
-    <header>
-        <nav class="container">
-            <div class="logo">Safe<span>Furni</span></div>
-            <a href="#cta" class="btn btn-outline">Стать поставщиком</a>
-        </nav>
-    </header>
 
-    <section class="hero container">
-        <div class="hero-content">
-            <h1>Мебель вашей мечты <br><span class="highlight">без риска потери денег</span></h1>
-            <p>Первый маркетплейс с эскроу-оплатой: продавец получит деньги только после того, как вы примите и проверите заказ.</p>
-            <div class="hero-btns">
-                <a href="#cta" class="btn btn-primary">Выбрать мебель</a>
-                <span class="trust-badge">🛡️ 100% защита предоплаты</span>
-            </div>
+  <!-- CURSOR -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <a href="#" class="nav-logo">Safe<em>Mebel</em></a>
+    <ul class="nav-links">
+      <li><a href="#how">Как работает</a></li>
+      <li><a href="#benefits">Преимущества</a></li>
+      <li><a href="#proof">Отзывы</a></li>
+      <li><a href="#cta" class="nav-cta">Начать</a></li>
+    </ul>
+    <button class="burger" id="burger" aria-label="Меню">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#how" class="mm-link">Как работает</a></li>
+      <li><a href="#benefits" class="mm-link">Преимущества</a></li>
+      <li><a href="#proof" class="mm-link">Отзывы</a></li>
+      <li><a href="#cta" class="mm-link">Начать</a></li>
+    </ul>
+  </div>
+
+  <!-- ═══════════════ HERO ═══════════════ -->
+  <section class="hero" id="hero">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-orb hero-orb-1"></div>
+    <div class="hero-orb hero-orb-2"></div>
+
+    <div class="hero-inner">
+      <div class="hero-left reveal">
+        <div class="hero-tag">
+          <span class="tag-dot"></span>
+          Безопасная сделка · Эскроу-оплата
         </div>
-    </section>
-
-    <section class="pain container">
-        <h2>Хватит рисковать при покупке мебели</h2>
-        <div class="grid">
-            <div class="card card-pain">
-                <h3>Срыв сроков</h3>
-                <p>Мастера задерживают поставку на месяцы, а вы уже внесли 100% оплату.</p>
-            </div>
-            <div class="card card-pain">
-                <h3>Низкое качество</h3>
-                <p>Привезли не то, что на фото? На обычном рынке вернуть деньги почти невозможно.</p>
-            </div>
-            <div class="card card-pain">
-                <h3>Исчезновение</h3>
-                <p>Недобросовестные поставщики пропадают сразу после получения аванса.</p>
-            </div>
+        <h1 class="hero-title">
+          Мебель без<br>
+          <em>риска</em> потери<br>
+          предоплаты
+        </h1>
+        <p class="hero-sub">
+          Вы платите — но поставщик получает деньги только после выполнения заказа. Маркетплейс, где каждая сделка защищена.
+        </p>
+        <div class="hero-actions">
+          <a href="#cta" class="btn-primary">
+            <span>Купить безопасно</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a href="#how" class="btn-ghost">Как это работает</a>
         </div>
-    </section>
+        <div class="hero-stats">
+          <div class="hstat">
+            <strong>48 200+</strong>
+            <span>Объявлений</span>
+          </div>
+          <div class="hstat-div"></div>
+          <div class="hstat">
+            <strong>99.4%</strong>
+            <span>Успешных сделок</span>
+          </div>
+          <div class="hstat-div"></div>
+          <div class="hstat">
+            <strong>4.9 ★</strong>
+            <span>Средний рейтинг</span>
+          </div>
+        </div>
+      </div>
 
-    <section class="solution">
-        <div class="container">
-            <h2>Как работает безопасная сделка</h2>
-            <div class="steps-grid">
-                <div class="step">
-                    <div class="step-num">1</div>
-                    <h4>Выбор и оплата</h4>
-                    <p>Вы оплачиваете заказ. Деньги не уходят продавцу, а резервируются системой.</p>
-                </div>
-                <div class="step">
-                    <div class="step-num">2</div>
-                    <h4>Контроль сроков</h4>
-                    <p>Срок и условия фиксируются. Мы следим за выполнением обязательств.</p>
-                </div>
-                <div class="step">
-                    <div class="step-num">3</div>
-                    <h4>Приемка товара</h4>
-                    <p>Вы проверяете мебель. Если всё отлично — подтверждаете получение.</p>
-                </div>
-                <div class="step">
-                    <div class="step-num">4</div>
-                    <h4>Выплата</h4>
-                    <p>Только после вашего "ОК" система переводит деньги поставщику.</p>
-                </div>
+      <div class="hero-right reveal reveal-delay-2">
+        <div class="hero-visual">
+
+          <!-- Escrow flow diagram -->
+          <div class="escrow-flow">
+            <div class="ef-title">Как работает эскроу</div>
+
+            <div class="ef-actor ef-buyer">
+              <div class="ef-actor-icon">👤</div>
+              <div class="ef-actor-label">Покупатель</div>
             </div>
+
+            <div class="ef-step ef-step-1 ef-active" id="efStep1">
+              <div class="ef-step-icon">💳</div>
+              <div class="ef-step-text">Оплата резервируется<br><span>Деньги на счёте SafeMebel</span></div>
+              <div class="ef-step-check">✓</div>
+            </div>
+
+            <div class="ef-connector ef-conn-active"></div>
+
+            <div class="ef-platform">
+              <div class="ef-platform-icon">
+                <svg viewBox="0 0 32 32" fill="none"><path d="M16 2l12 5v9c0 8-12 14-12 14S4 24 4 16V7L16 2z" fill="rgba(201,151,58,0.2)" stroke="#C9973A" stroke-width="1.5"/><path d="M11 16l3.5 3.5L21 12" stroke="#C9973A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="ef-platform-name">SafeMebel</div>
+              <div class="ef-platform-sub">Защищённый счёт</div>
+            </div>
+
+            <div class="ef-step ef-step-2" id="efStep2">
+              <div class="ef-step-icon">🚚</div>
+              <div class="ef-step-text">Поставщик отправляет<br><span>Сроки зафиксированы</span></div>
+              <div class="ef-step-check">✓</div>
+            </div>
+
+            <div class="ef-connector"></div>
+
+            <div class="ef-step ef-step-3" id="efStep3">
+              <div class="ef-step-icon">✅</div>
+              <div class="ef-step-text">Подтверждение получения<br><span>Деньги переходят продавцу</span></div>
+              <div class="ef-step-check">✓</div>
+            </div>
+
+            <div class="ef-connector ef-connector-split"></div>
+
+            <div class="ef-actor ef-seller">
+              <div class="ef-actor-icon">🏭</div>
+              <div class="ef-actor-label">Поставщик</div>
+            </div>
+          </div>
+
+          <!-- Floating badges -->
+          <div class="float-badge fb-1">
+            <span>🔒</span> Эскроу-счёт
+          </div>
+          <div class="float-badge fb-2">
+            <span>✓</span> Проверенный продавец
+          </div>
+
         </div>
-    </section>
+      </div>
+    </div>
 
-    <section id="cta" class="cta container">
-        <div class="cta-box">
-            <h2>Готовы к обновлению интерьера?</h2>
-            <p>Присоединяйтесь к тысячам защищенных покупателей уже сегодня.</p>
-            <form id="leadForm">
-                <input type="email" placeholder="Ваш e-mail" required>
-                <button type="submit" class="btn btn-primary">Получить доступ</button>
-            </form>
-            <p id="formMessage" class="hidden">Спасибо! Мы свяжемся с вами в ближайшее время.</p>
+    <div class="hero-scroll">
+      <div class="scroll-line"></div>
+      <span>Прокрутите вниз</span>
+    </div>
+  </section>
+
+  <!-- ═══════════════ PAIN ═══════════════ -->
+  <section class="pain-section" id="pain">
+    <div class="container">
+      <div class="pain-header reveal">
+        <div class="section-eyebrow">Проблема рынка</div>
+        <h2 class="section-title">Рынок мебели<br><em>непрозрачен</em></h2>
+      </div>
+      <div class="pain-grid">
+        <div class="pain-card reveal">
+          <div class="pain-icon">💸</div>
+          <h3>Потеря предоплаты</h3>
+          <p>Поставщики исчезают после получения денег. Вы остаётесь ни с чем — без товара и без возврата.</p>
         </div>
-    </section>
+        <div class="pain-card reveal reveal-delay-1">
+          <div class="pain-icon">📦</div>
+          <h3>Срыв сроков</h3>
+          <p>Заказ обещан через 2 недели, приходит через 3 месяца — или не приходит вовсе.</p>
+        </div>
+        <div class="pain-card reveal reveal-delay-2">
+          <div class="pain-icon">😤</div>
+          <h3>Некачественный товар</h3>
+          <p>На фото — элитная мебель. В реальности — совсем другое качество. Оспорить уже невозможно.</p>
+        </div>
+        <div class="pain-card reveal reveal-delay-3">
+          <div class="pain-icon">🚫</div>
+          <h3>Нет доверия</h3>
+          <p>Фальшивые отзывы, накрученные рейтинги. Невозможно понять, кому доверять.</p>
+        </div>
+      </div>
+      <div class="pain-quote reveal">
+        <blockquote>
+          «Я перевёл 180 000 рублей за гарнитур. Продавец перестал отвечать на следующий день.»
+        </blockquote>
+        <cite>— реальная история покупателя</cite>
+      </div>
+    </div>
+  </section>
 
-    <footer>
-        <p>&copy; 2024 SafeDecor. Все сделки защищены.</p>
-    </footer>
+  <!-- ═══════════════ HOW IT WORKS ═══════════════ -->
+  <section class="how-section" id="how">
+    <div class="container">
+      <div class="how-header reveal">
+        <div class="section-eyebrow">Решение</div>
+        <h2 class="section-title">Как работает<br><em>SafeMebel</em></h2>
+        <p class="section-sub">Четыре шага, которые делают каждую сделку безопасной</p>
+      </div>
 
-    <script src="script.js"></script>
+      <div class="how-steps">
+        <div class="how-step reveal">
+          <div class="step-num">01</div>
+          <div class="step-body">
+            <div class="step-icon">🛒</div>
+            <h3>Выбираете товар</h3>
+            <p>Просматривайте тысячи объявлений от верифицированных поставщиков с реальными рейтингами и фото.</p>
+          </div>
+          <div class="step-arrow">→</div>
+        </div>
+        <div class="how-step reveal reveal-delay-1">
+          <div class="step-num">02</div>
+          <div class="step-body">
+            <div class="step-icon">🔐</div>
+            <h3>Деньги резервируются</h3>
+            <p>Оплата поступает на защищённый эскроу-счёт SafeMebel. Поставщик видит: заказ подтверждён.</p>
+          </div>
+          <div class="step-arrow">→</div>
+        </div>
+        <div class="how-step reveal reveal-delay-2">
+          <div class="step-num">03</div>
+          <div class="step-body">
+            <div class="step-icon">🚚</div>
+            <h3>Поставщик выполняет</h3>
+            <p>Сроки и условия зафиксированы в системе. Поставщик отправляет товар — вы отслеживаете каждый этап.</p>
+          </div>
+          <div class="step-arrow">→</div>
+        </div>
+        <div class="how-step reveal reveal-delay-3">
+          <div class="step-num">04</div>
+          <div class="step-body">
+            <div class="step-icon">✅</div>
+            <h3>Подтверждаете и платите</h3>
+            <p>Проверили товар — нажимаете «Подтвердить». Только тогда деньги переходят поставщику.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ BENEFITS ═══════════════ -->
+  <section class="benefits-section" id="benefits">
+    <div class="benefits-bg"></div>
+    <div class="container">
+      <div class="benefits-header reveal">
+        <div class="section-eyebrow">Преимущества</div>
+        <h2 class="section-title light">Вы защищены<br>на <em>каждом</em> этапе</h2>
+      </div>
+
+      <div class="benefits-grid">
+        <div class="benefit-card reveal">
+          <div class="bcard-icon">🛡️</div>
+          <h3>Эскроу-оплата</h3>
+          <p>Деньги не поступают продавцу до тех пор, пока вы не убедитесь, что товар соответствует описанию.</p>
+          <div class="bcard-line"></div>
+        </div>
+        <div class="benefit-card reveal reveal-delay-1">
+          <div class="bcard-icon">🔍</div>
+          <h3>Верификация поставщиков</h3>
+          <p>Каждый продавец проходит проверку по документам. Только реальные компании и ИП.</p>
+          <div class="bcard-line"></div>
+        </div>
+        <div class="benefit-card reveal reveal-delay-2">
+          <div class="bcard-icon">⭐</div>
+          <h3>Честные рейтинги</h3>
+          <p>Отзывы только от покупателей, завершивших сделку. Накрутить или купить рейтинг невозможно.</p>
+          <div class="bcard-line"></div>
+        </div>
+        <div class="benefit-card reveal reveal-delay-3">
+          <div class="bcard-icon">📋</div>
+          <h3>Фиксация условий</h3>
+          <p>Сроки, комплектация, цвет — всё фиксируется в системе. Никаких «я не обещал».</p>
+          <div class="bcard-line"></div>
+        </div>
+        <div class="benefit-card reveal reveal-delay-1">
+          <div class="bcard-icon">↩️</div>
+          <h3>Возврат средств</h3>
+          <p>Товар не приехал или не соответствует? Полный возврат в течение 3 рабочих дней.</p>
+          <div class="bcard-line"></div>
+        </div>
+        <div class="benefit-card reveal reveal-delay-2">
+          <div class="bcard-icon">💬</div>
+          <h3>Поддержка 24/7</h3>
+          <p>Спорная ситуация? Наша команда разберётся и вынесет решение в течение 24 часов.</p>
+          <div class="bcard-line"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ SOCIAL PROOF ═══════════════ -->
+  <section class="proof-section" id="proof">
+    <div class="container">
+      <div class="proof-header reveal">
+        <div class="section-eyebrow">Реальные истории</div>
+        <h2 class="section-title">Покупатели говорят<br>за <em>себя</em></h2>
+      </div>
+
+      <div class="proof-grid">
+        <div class="review-card reveal">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">«Наконец-то купил диван на 120к без страха. Деньги держались в системе пока я не проверил доставку. Всё пришло точно по описанию.»</p>
+          <div class="review-author">
+            <div class="review-avatar">АК</div>
+            <div>
+              <strong>Артём К.</strong>
+              <span>Москва · Диван 3-местный</span>
+            </div>
+          </div>
+        </div>
+        <div class="review-card review-card-featured reveal reveal-delay-1">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">«Раньше боялась покупать мебель онлайн — один раз уже обожглась. Здесь всё иначе: поставщик верифицирован, условия зафиксированы, деньги вернулись бы в случае проблем. Заказала кухонный гарнитур на 280к — всё отлично.»</p>
+          <div class="review-author">
+            <div class="review-avatar">МС</div>
+            <div>
+              <strong>Марина С.</strong>
+              <span>СПб · Кухонный гарнитур</span>
+            </div>
+          </div>
+          <div class="review-amount">Сделка: 280 000 ₽</div>
+        </div>
+        <div class="review-card reveal reveal-delay-2">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">«Я поставщик. Благодаря высокому рейтингу мои продажи выросли в 3 раза за полгода. Честная конкуренция.»</p>
+          <div class="review-author">
+            <div class="review-avatar">ДН</div>
+            <div>
+              <strong>Дмитрий Н.</strong>
+              <span>Продавец · 4.9 ★ · 320 сделок</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="proof-numbers reveal">
+        <div class="pnum">
+          <strong>32 000+</strong>
+          <span>Покупателей на платформе</span>
+        </div>
+        <div class="pnum">
+          <strong>18 000+</strong>
+          <span>Продавцов прошли верификацию</span>
+        </div>
+        <div class="pnum">
+          <strong>₽ 4,2 млрд</strong>
+          <span>Защищено через эскроу</span>
+        </div>
+        <div class="pnum">
+          <strong>0 ₽</strong>
+          <span>Потеряно покупателями</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ CTA ═══════════════ -->
+  <section class="cta-section" id="cta">
+    <div class="cta-bg-grid"></div>
+    <div class="cta-orb"></div>
+    <div class="container">
+      <div class="cta-inner reveal">
+        <div class="section-eyebrow light">Начните прямо сейчас</div>
+        <h2 class="cta-title">
+          Покупайте мебель<br>без <em>риска</em>
+        </h2>
+        <p class="cta-sub">Подключайтесь к безопасному маркетплейсу уже сегодня. Первый заказ — и вы поймёте разницу.</p>
+        <div class="cta-actions">
+          <a href="#" class="btn-cta-primary">
+            <span>Найти мебель</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a href="#" class="btn-cta-ghost">Стать продавцом</a>
+        </div>
+        <div class="cta-trust">
+          <span>🔒 Ваши данные защищены</span>
+          <span>✓ Без скрытых комиссий</span>
+          <span>↩️ Возврат гарантирован</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">Safe<em>Mebel</em></div>
+          <p>Маркетплейс мебели с безопасной сделкой. Вы платите только когда довольны.</p>
+          <div class="footer-socials">
+            <a href="#" aria-label="VK">VK</a>
+            <a href="#" aria-label="TG">TG</a>
+            <a href="#" aria-label="WA">WA</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Покупателям</h4>
+          <ul>
+            <li><a href="#">Как купить</a></li>
+            <li><a href="#">Безопасная сделка</a></li>
+            <li><a href="#">Возврат</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Продавцам</h4>
+          <ul>
+            <li><a href="#">Как продавать</a></li>
+            <li><a href="#">Верификация</a></li>
+            <li><a href="#">Тарифы</a></li>
+            <li><a href="#">Выплаты</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Компания</h4>
+          <ul>
+            <li><a href="#">О нас</a></li>
+            <li><a href="#">Блог</a></li>
+            <li><a href="#">Контакты</a></li>
+            <li><a href="#">Правовая информация</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 SafeMebel. Все права защищены.</span>
+        <span>Политика конфиденциальности · Пользовательское соглашение</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
