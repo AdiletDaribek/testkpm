@@ -185,47 +185,34 @@
 /* ── HERO ESCROW FLOW ANIMATION ── */
 (function initEscrowAnimation() {
   const steps = [
-    document.getElementById('efStep1'),
-    document.getElementById('efStep2'),
-    document.getElementById('efStep3'),
+    document.getElementById('efs1'),
+    document.getElementById('efs2'),
+    document.getElementById('efs3'),
   ];
-  const connectors = document.querySelectorAll('.ef-connector');
+  const lines = [
+    document.getElementById('efsLine1'),
+    document.getElementById('efsLine2'),
+  ];
   if (!steps[0]) return;
 
   let current = 0;
 
-  function advance() {
-    current = (current + 1) % (steps.length + 1);
-
-    steps.forEach((step, i) => {
-      if (!step) return;
-      step.classList.toggle('ef-active', i <= current - 1);
+  function showStep(idx) {
+    steps.forEach((s, i) => {
+      if (!s) return;
+      s.classList.toggle('efs-active', i === idx);
     });
-
-    connectors.forEach((conn, i) => {
-      conn.classList.toggle('ef-conn-active', i < current);
+    lines.forEach((l, i) => {
+      if (!l) return;
+      l.classList.toggle('efs-line-active', i < idx);
     });
-
-    // Reset after completing cycle
-    if (current >= steps.length) {
-      setTimeout(() => {
-        current = 0;
-        steps.forEach(s => s && s.classList.remove('ef-active'));
-        connectors.forEach(c => c.classList.remove('ef-conn-active'));
-        // Re-activate first after short pause
-        setTimeout(() => {
-          steps[0] && steps[0].classList.add('ef-active');
-          current = 1;
-        }, 400);
-      }, 1800);
-    }
   }
 
-  // Start with step 1 active
-  steps[0] && steps[0].classList.add('ef-active');
-  current = 1;
-
-  setInterval(advance, 2000);
+  showStep(0);
+  setInterval(() => {
+    current = (current + 1) % steps.length;
+    showStep(current);
+  }, 2200);
 })();
 
 
@@ -344,4 +331,202 @@
     }
   `;
   document.head.appendChild(style);
+})();
+
+
+/* ── MODAL & LEADS ── */
+(function initModal() {
+  const overlay    = document.getElementById('modalOverlay');
+  const modal      = document.getElementById('modal');
+  const closeBtn   = document.getElementById('modalClose');
+  const submitBtn  = document.getElementById('modalSubmit');
+  const successDiv = document.getElementById('modalSuccess');
+  const bodyDiv    = document.getElementById('modalBody');
+  const successClose = document.getElementById('successClose');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalSub   = document.getElementById('modalSub');
+  const modalIcon  = document.getElementById('modalIcon');
+  const adminBtn   = document.getElementById('adminBtn');
+  const leadsPanel = document.getElementById('leadsPanel');
+  const exportBtn  = document.getElementById('exportBtn');
+
+  if (!overlay) return;
+
+  // Lead storage
+  let leads = JSON.parse(localStorage.getItem('sm_leads') || '[]');
+  let currentType = 'buyer';
+
+  const MODAL_CONFIGS = {
+    buyer: {
+      icon: '🛒',
+      title: 'Найти мебель безопасно',
+      sub: 'Оставьте контакты — мы покажем лучшие предложения от проверенных продавцов'
+    },
+    seller: {
+      icon: '🏭',
+      title: 'Стать продавцом',
+      sub: 'Мы расскажем об условиях работы и поможем пройти верификацию'
+    },
+    default: {
+      icon: '🔒',
+      title: 'Оставьте заявку',
+      sub: 'Мы свяжемся с вами в течение 15 минут'
+    }
+  };
+
+  function openModal(type) {
+    const cfg = MODAL_CONFIGS[type] || MODAL_CONFIGS.default;
+    currentType = type || 'default';
+    modalIcon.textContent = cfg.icon;
+    modalTitle.textContent = cfg.title;
+    modalSub.textContent = cfg.sub;
+    bodyDiv.classList.remove('hide');
+    successDiv.classList.remove('show');
+    // Reset fields
+    document.getElementById('fieldName').value = '';
+    document.getElementById('fieldPhone').value = '';
+    document.getElementById('fieldEmail').value = '';
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => document.getElementById('fieldName').focus(), 300);
+  }
+
+  function closeModal() {
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // Open on all data-modal buttons
+  document.querySelectorAll('[data-modal]').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      openModal(btn.getAttribute('data-modal'));
+    });
+  });
+
+  closeBtn.addEventListener('click', closeModal);
+  overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+  if (successClose) successClose.addEventListener('click', closeModal);
+
+  // Submit
+  submitBtn.addEventListener('click', () => {
+    const name  = document.getElementById('fieldName').value.trim();
+    const phone = document.getElementById('fieldPhone').value.trim();
+    const email = document.getElementById('fieldEmail').value.trim();
+
+    // Simple validation
+    if (!name) {
+      document.getElementById('fieldName').focus();
+      document.getElementById('fieldName').style.borderColor = '#e53e3e';
+      setTimeout(() => document.getElementById('fieldName').style.borderColor = '', 1500);
+      return;
+    }
+    if (!phone) {
+      document.getElementById('fieldPhone').focus();
+      document.getElementById('fieldPhone').style.borderColor = '#e53e3e';
+      setTimeout(() => document.getElementById('fieldPhone').style.borderColor = '', 1500);
+      return;
+    }
+
+    const lead = {
+      id: Date.now(),
+      date: new Date().toLocaleString('ru-RU'),
+      type: currentType === 'buyer' ? 'Покупатель' : currentType === 'seller' ? 'Продавец' : 'Заявка',
+      name, phone, email
+    };
+
+    leads.push(lead);
+    localStorage.setItem('sm_leads', JSON.stringify(leads));
+    updateAdminPanel();
+
+    // Show success
+    bodyDiv.classList.add('hide');
+    successDiv.classList.add('show');
+  });
+
+  // Admin panel
+  function updateAdminPanel() {
+    const countEl = document.getElementById('leadsCount');
+    const listEl  = document.getElementById('leadsList');
+    if (!countEl || !listEl) return;
+    countEl.textContent = leads.length;
+    listEl.innerHTML = leads.slice().reverse().map(l => `
+      <div style="padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.07);">
+        <div style="font-weight:600;color:#E3B860;">${l.name} · ${l.type}</div>
+        <div style="color:#8A9BB5;font-size:11px;">${l.phone}${l.email ? ' · ' + l.email : ''}</div>
+        <div style="color:#555;font-size:10px;">${l.date}</div>
+      </div>
+    `).join('');
+  }
+
+  // Show admin button if leads exist OR after first submission
+  function checkAdminBtn() {
+    if (leads.length > 0 && adminBtn) {
+      adminBtn.style.display = 'flex';
+      adminBtn.style.alignItems = 'center';
+      adminBtn.style.justifyContent = 'center';
+    }
+  }
+
+  if (adminBtn) {
+    adminBtn.addEventListener('click', () => {
+      updateAdminPanel();
+      leadsPanel.style.display = leadsPanel.style.display === 'none' ? 'block' : 'none';
+      adminBtn.style.display = 'none';
+    });
+  }
+
+  // Export CSV
+  if (exportBtn) {
+    exportBtn.addEventListener('click', () => {
+      if (!leads.length) return;
+      const headers = ['ID','Дата','Тип','Имя','Телефон','Email'];
+      const rows = leads.map(l => [l.id, l.date, l.type, l.name, l.phone, l.email].map(v => `"${v}"`).join(','));
+      const csv  = [headers.join(','), ...rows].join('\n');
+      const blob = new Blob(['\uFEFF' + csv], { type: 'text/csv;charset=utf-8;' });
+      const url  = URL.createObjectURL(blob);
+      const a    = document.createElement('a');
+      a.href = url; a.download = 'safemebel_leads.csv';
+      a.click(); URL.revokeObjectURL(url);
+    });
+  }
+
+  checkAdminBtn();
+  updateAdminPanel();
+})();
+
+/* ── HERO TRUST GRID BAR ANIMATION ── */
+(function initTrustBar() {
+  const fill = document.querySelector('.htg-bar-fill');
+  if (!fill) return;
+  const observer = new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting) {
+      setTimeout(() => { fill.style.width = '94%'; }, 300);
+      observer.disconnect();
+    }
+  }, { threshold: 0.5 });
+  const bar = document.querySelector('.htg-bar');
+  if (bar) observer.observe(bar);
+})();
+
+/* ── FIT HERO TITLE TO FULL WIDTH ── */
+(function fitHeroTitle() {
+  const title = document.querySelector('.hero-title');
+  if (!title) return;
+
+  function fit() {
+    title.style.fontSize = '10px';
+    const available = title.parentElement.clientWidth;
+    let size = 10;
+    title.style.fontSize = size + 'px';
+    while (title.scrollWidth <= available && size < 300) {
+      size += 0.5;
+      title.style.fontSize = size + 'px';
+    }
+    title.style.fontSize = (size - 0.5) + 'px';
+  }
+
+  fit();
+  window.addEventListener('resize', fit);
 })();
