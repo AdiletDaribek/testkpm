@@ -1,351 +1,353 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>SafeMebel — Маркетплейс мебели с безопасной сделкой</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <!-- Yandex.Metrika counter -->
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
   <script type="text/javascript">
-      (function(m,e,t,r,i,k,a){
-          m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-          m[i].l=1*new Date();
-          for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-          k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-      })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=107230282', 'ym');
-  
-      ym(107230282, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=107230282','ym');
+    ym(107230282,'init',{ssr:true,webvisor:true,clickmap:true,ecommerce:"dataLayer",referrer:document.referrer,url:location.href,accurateTrackBounce:true,trackLinks:true});
   </script>
-  <noscript><div><img src="https://mc.yandex.ru/watch/107230282" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-  <!-- /Yandex.Metrika counter -->
+  <noscript><div><img src="https://mc.yandex.ru/watch/107230282" style="position:absolute;left:-9999px;" alt=""/></div></noscript>
 </head>
 <body>
 
-  <!-- CURSOR -->
-  <div class="cursor" id="cursor"></div>
-  <div class="cursor-follower" id="cursorFollower"></div>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-follower" id="cursorFollower"></div>
 
-  <!-- NAV -->
-  <nav class="nav" id="nav">
-    <a href="#" class="nav-logo">Safe<em>Mebel</em></a>
-    <ul class="nav-links">
-      <li><a href="#how">Как работает</a></li>
-      <li><a href="#benefits">Преимущества</a></li>
-      <li><a href="#proof">Отзывы</a></li>
-      <li><a href="#cta" class="nav-cta">Начать</a></li>
-    </ul>
-    <button class="burger" id="burger" aria-label="Меню">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
-
-  <!-- MOBILE MENU -->
-  <div class="mobile-menu" id="mobileMenu">
-    <ul>
-      <li><a href="#how" class="mm-link">Как работает</a></li>
-      <li><a href="#benefits" class="mm-link">Преимущества</a></li>
-      <li><a href="#proof" class="mm-link">Отзывы</a></li>
-      <li><a href="#cta" class="mm-link">Начать</a></li>
-    </ul>
+<!-- ══ NAV ══ -->
+<nav class="nav" id="nav">
+  <a href="#" class="nav-logo">
+    <span class="logo-icon">SM</span>
+    Safe<em>Mebel</em>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#how">Как работает</a></li>
+    <li><a href="#catalog">Каталог</a></li>
+    <li><a href="#proof">Отзывы</a></li>
+    <li><a href="#contact">Контакты</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="#" class="nav-ghost" data-modal="seller">Продавцам</a>
+    <a href="#" class="nav-fill" data-modal="buyer">Начать →</a>
   </div>
+  <button class="burger" id="burger" aria-label="Меню"><span></span><span></span><span></span></button>
+</nav>
 
-  <!-- ═══════════════ HERO ═══════════════ -->
-  <section class="hero" id="hero">
-    <div class="hero-bg-grid"></div>
-    <div class="hero-orb hero-orb-1"></div>
-    <div class="hero-orb hero-orb-2"></div>
+<div class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a href="#how" class="mm-link">Как работает</a></li>
+    <li><a href="#catalog" class="mm-link">Каталог</a></li>
+    <li><a href="#proof" class="mm-link">Отзывы</a></li>
+    <li><a href="#contact" class="mm-link">Контакты</a></li>
+  </ul>
+  <a href="#" class="nav-fill mm-fill" data-modal="buyer">Начать →</a>
+</div>
 
-    <div class="hero-inner">
-      <div class="hero-left reveal">
-        <div class="hero-tag">
-          <span class="tag-dot"></span>
-          Безопасная сделка
-        </div>
-        <h1 class="hero-title">Мебель без <em>риска</em> потери предоплаты</h1>
-        <p class="hero-sub">
-          Вы платите — но поставщик получает деньги только после выполнения заказа. Маркетплейс, где каждая сделка защищена.
-        </p>
+<!-- ══ HERO — чистый, без карточек ══ -->
+<section class="hero" id="hero">
+  <div class="orb orb-green"></div>
+  <div class="orb orb-purple"></div>
+  <div class="orb orb-pink"></div>
+
+  <div class="hero-inner">
+    <div class="hero-badge reveal">
+      <span class="badge-dot"></span>
+      Безопасная сделка · Казахстан
+    </div>
+
+    <!-- Dodo: заголовок слева, описание справа -->
+    <div class="hero-split reveal">
+      <h1 class="hero-h1">
+        SafeMebel —<br>
+        это маркетплейс<br>
+        <em>мебели</em> с эскроу
+      </h1>
+      <div class="hero-right-text">
+        <p>Мы создаём технологии, которые помогают покупателям мебели в Казахстане совершать безопасные сделки.</p>
+        <p>В основе — эскроу-платформа, которая гарантирует оплату только после выполнения заказа.</p>
         <div class="hero-actions">
-          <a href="#" class="btn-primary" data-modal="buyer">
-            <span>Купить безопасно</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
-          <a href="#how" class="btn-ghost">Как это работает</a>
-        </div>
-        <div class="hero-stats">
-          <div class="hstat">
-            <strong>48 200+</strong>
-            <span>Объявлений</span>
-          </div>
-          <div class="hstat-div"></div>
-          <div class="hstat">
-            <strong>99.4%</strong>
-            <span>Успешных сделок</span>
-          </div>
-          <div class="hstat-div"></div>
-          <div class="hstat">
-            <strong>4.9 ★</strong>
-            <span>Средний рейтинг</span>
-          </div>
+          <a href="#" class="btn-fill" data-modal="buyer">Купить безопасно →</a>
+          <a href="#" class="btn-ghost" data-modal="seller">Стать продавцом</a>
         </div>
       </div>
     </div>
 
-    <div class="hero-scroll">
-      <div class="scroll-line"></div>
-      <span>Прокрутите вниз</span>
+    <!-- Dodo: 4 числа внизу hero -->
+    <div class="hero-stats reveal">
+      <div class="hstat"><strong>48 200+</strong><span>объявлений на платформе</span></div>
+      <div class="hstat"><strong>40+</strong><span>категорий мебели</span></div>
+      <div class="hstat"><strong>18 000+</strong><span>покупателей используют SafeMebel</span></div>
+      <div class="hstat"><strong>0 ₸</strong><span>потеряно покупателями</span></div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ═══════════════ PAIN ═══════════════ -->
-  <section class="pain-section" id="pain">
-    <div class="container">
-      <div class="pain-header reveal">
-        <div class="section-eyebrow">Проблема рынка</div>
-        <h2 class="section-title">Рынок мебели<br><em>непрозрачен</em></h2>
-      </div>
-      <div class="pain-grid">
-        <div class="pain-card reveal">
-          <div class="pain-icon">💸</div>
-          <h3>Потеря предоплаты</h3>
-          <p>Поставщики исчезают после получения денег. Вы остаётесь ни с чем — без товара и без возврата.</p>
-        </div>
-        <div class="pain-card reveal reveal-delay-1">
-          <div class="pain-icon">📦</div>
-          <h3>Срыв сроков</h3>
-          <p>Заказ обещан через 2 недели, приходит через 3 месяца — или не приходит вовсе.</p>
-        </div>
-        <div class="pain-card reveal reveal-delay-2">
-          <div class="pain-icon">😤</div>
-          <h3>Некачественный товар</h3>
-          <p>На фото — элитная мебель. В реальности — совсем другое качество. Оспорить уже невозможно.</p>
-        </div>
-        <div class="pain-card reveal reveal-delay-3">
-          <div class="pain-icon">🚫</div>
-          <h3>Нет доверия</h3>
-          <p>Фальшивые отзывы, накрученные рейтинги. Невозможно понять, кому доверять.</p>
-        </div>
-      </div>
-      <div class="pain-quote reveal">
-        <blockquote>
-          «Я перевёл 180 000 рублей за гарнитур. Продавец перестал отвечать на следующий день.»
-        </blockquote>
-        <cite>— реальная история покупателя</cite>
-      </div>
+<!-- ══ КАК РАБОТАЕТ ══ -->
+<section class="how-section" id="how">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="ghost-label">КАК РАБОТАЕТ</div>
+      <div class="eyebrow">Решение</div>
+      <h2 class="sec-title">Как работает <em>SafeMebel</em></h2>
+      <p class="sec-sub">Четыре шага, которые делают каждую сделку защищённой</p>
     </div>
-  </section>
-
-  <!-- ═══════════════ HOW IT WORKS ═══════════════ -->
-  <section class="how-section" id="how">
-    <div class="container">
-      <div class="how-header reveal">
-        <div class="section-eyebrow">Решение</div>
-        <h2 class="section-title">Как работает<br><em>SafeMebel</em></h2>
-        <p class="section-sub">Четыре шага, которые делают каждую сделку безопасной</p>
+    <div class="how-grid">
+      <div class="how-card reveal">
+        <div class="how-num">01</div>
+        <div class="how-icon">🛒</div>
+        <h3>Выбираете товар</h3>
+        <p>Тысячи объявлений от верифицированных поставщиков с реальными рейтингами.</p>
       </div>
-
-      <div class="how-steps">
-        <div class="how-step reveal">
-          <div class="step-num">01</div>
-          <div class="step-body">
-            <div class="step-icon">🛒</div>
-            <h3>Выбираете товар</h3>
-            <p>Просматривайте тысячи объявлений от верифицированных поставщиков с реальными рейтингами и фото.</p>
-          </div>
-          <div class="step-arrow">→</div>
-        </div>
-        <div class="how-step reveal reveal-delay-1">
-          <div class="step-num">02</div>
-          <div class="step-body">
-            <div class="step-icon">🔐</div>
-            <h3>Деньги резервируются</h3>
-            <p>Оплата поступает на защищённый эскроу-счёт SafeMebel. Поставщик видит: заказ подтверждён.</p>
-          </div>
-          <div class="step-arrow">→</div>
-        </div>
-        <div class="how-step reveal reveal-delay-2">
-          <div class="step-num">03</div>
-          <div class="step-body">
-            <div class="step-icon">🚚</div>
-            <h3>Поставщик выполняет</h3>
-            <p>Сроки и условия зафиксированы в системе. Поставщик отправляет товар — вы отслеживаете каждый этап.</p>
-          </div>
-          <div class="step-arrow">→</div>
-        </div>
-        <div class="how-step reveal reveal-delay-3">
-          <div class="step-num">04</div>
-          <div class="step-body">
-            <div class="step-icon">✅</div>
-            <h3>Подтверждаете и платите</h3>
-            <p>Проверили товар — нажимаете «Подтвердить». Только тогда деньги переходят поставщику.</p>
-          </div>
-        </div>
+      <div class="how-card reveal reveal-delay-1">
+        <div class="how-num">02</div>
+        <div class="how-icon">🔐</div>
+        <h3>Деньги резервируются</h3>
+        <p>Оплата поступает на защищённый эскроу-счёт. Продавец видит: заказ подтверждён.</p>
+      </div>
+      <div class="how-card reveal reveal-delay-2">
+        <div class="how-num">03</div>
+        <div class="how-icon">🚚</div>
+        <h3>Продавец выполняет</h3>
+        <p>Сроки и условия зафиксированы. Вы отслеживаете каждый этап доставки.</p>
+      </div>
+      <div class="how-card reveal reveal-delay-3">
+        <div class="how-num">04</div>
+        <div class="how-icon">✅</div>
+        <h3>Вы подтверждаете</h3>
+        <p>Проверили товар — нажимаете «Подтвердить». Только тогда деньги идут продавцу.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ═══════════════ BENEFITS ═══════════════ -->
-  <section class="benefits-section" id="benefits">
-    <div class="benefits-bg"></div>
-    <div class="container">
-      <div class="benefits-header reveal">
-        <div class="section-eyebrow">Преимущества</div>
-        <h2 class="section-title light">Вы защищены<br>на <em>каждом</em> этапе</h2>
+<!-- ══ КАТАЛОГ — категории без лишних карточек ══ -->
+<section class="catalog-section" id="catalog">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="ghost-label">КАТАЛОГ</div>
+      <div class="eyebrow">Категории</div>
+      <h2 class="sec-title">Какую мебель<br>вы <em>ищете?</em></h2>
+    </div>
+    <div class="cat-list">
+      <a class="cat-row reveal" href="#" data-modal="buyer">
+        <div class="cat-row-left">
+          <span class="cat-ico">🛋️</span>
+          <span class="cat-row-name">Гостиная</span>
+        </div>
+        <span class="cat-row-desc">Диваны, кресла, тумбы, стеллажи</span>
+        <span class="cat-row-arrow">→</span>
+      </a>
+      <a class="cat-row reveal reveal-delay-1" href="#" data-modal="buyer">
+        <div class="cat-row-left">
+          <span class="cat-ico">🛏️</span>
+          <span class="cat-row-name">Спальня</span>
+        </div>
+        <span class="cat-row-desc">Кровати, шкафы, комоды, тумбочки</span>
+        <span class="cat-row-arrow">→</span>
+      </a>
+      <a class="cat-row reveal reveal-delay-2" href="#" data-modal="buyer">
+        <div class="cat-row-left">
+          <span class="cat-ico">🍽️</span>
+          <span class="cat-row-name">Кухня</span>
+        </div>
+        <span class="cat-row-desc">Гарнитуры, столы, стулья</span>
+        <span class="cat-row-arrow">→</span>
+      </a>
+      <a class="cat-row reveal reveal-delay-3" href="#" data-modal="buyer">
+        <div class="cat-row-left">
+          <span class="cat-ico">💼</span>
+          <span class="cat-row-name">Офис</span>
+        </div>
+        <span class="cat-row-desc">Кресла, столы, стеллажи</span>
+        <span class="cat-row-arrow">→</span>
+      </a>
+      <a class="cat-row cat-row-all reveal" href="#" data-modal="buyer">
+        <div class="cat-row-left">
+          <span class="cat-ico">✦</span>
+          <span class="cat-row-name">Все категории</span>
+        </div>
+        <span class="cat-row-desc">48 200+ объявлений на платформе</span>
+        <span class="cat-row-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ПРЕИМУЩЕСТВА — простой список 2×2 ══ -->
+<section class="benefits-section" id="benefits">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="ghost-label">СЕРВИС</div>
+      <div class="eyebrow">Почему SafeMebel</div>
+      <h2 class="sec-title">Больше чем <em>платформа</em></h2>
+    </div>
+    <div class="srv-grid">
+      <div class="srv-row reveal">
+        <div class="srv-icon">🔐</div>
+        <div class="srv-text">
+          <h3>Эскроу-защита</h3>
+          <p>Деньги хранятся на нейтральном счёте до тех пор, пока вы не подтвердите получение.</p>
+        </div>
       </div>
-
-      <div class="benefits-grid">
-        <div class="benefit-card reveal">
-          <div class="bcard-icon">🛡️</div>
-          <h3>Эскроу-оплата</h3>
-          <p>Деньги не поступают продавцу до тех пор, пока вы не убедитесь, что товар соответствует описанию.</p>
-          <div class="bcard-line"></div>
+      <div class="srv-row reveal reveal-delay-1">
+        <div class="srv-icon">✅</div>
+        <div class="srv-text">
+          <h3>Верификация продавцов</h3>
+          <p>Каждый продавец проходит проверку документов и истории сделок. Случайных людей нет.</p>
         </div>
-        <div class="benefit-card reveal reveal-delay-1">
-          <div class="bcard-icon">🔍</div>
-          <h3>Верификация поставщиков</h3>
-          <p>Каждый продавец проходит проверку по документам. Только реальные компании и ИП.</p>
-          <div class="bcard-line"></div>
+      </div>
+      <div class="srv-row reveal reveal-delay-2">
+        <div class="srv-icon">⭐</div>
+        <div class="srv-text">
+          <h3>Реальные рейтинги</h3>
+          <p>Отзывы оставляют только те, кто завершил сделку. Накрутка технически невозможна.</p>
         </div>
-        <div class="benefit-card reveal reveal-delay-2">
-          <div class="bcard-icon">⭐</div>
-          <h3>Честные рейтинги</h3>
-          <p>Отзывы только от покупателей, завершивших сделку. Накрутить или купить рейтинг невозможно.</p>
-          <div class="bcard-line"></div>
-        </div>
-        <div class="benefit-card reveal reveal-delay-3">
-          <div class="bcard-icon">📋</div>
-          <h3>Фиксация условий</h3>
-          <p>Сроки, комплектация, цвет — всё фиксируется в системе. Никаких «я не обещал».</p>
-          <div class="bcard-line"></div>
-        </div>
-        <div class="benefit-card reveal reveal-delay-1">
-          <div class="bcard-icon">↩️</div>
-          <h3>Возврат средств</h3>
-          <p>Товар не приехал или не соответствует? Полный возврат в течение 3 рабочих дней.</p>
-          <div class="bcard-line"></div>
-        </div>
-        <div class="benefit-card reveal reveal-delay-2">
-          <div class="bcard-icon">💬</div>
-          <h3>Поддержка 24/7</h3>
-          <p>Спорная ситуация? Наша команда разберётся и вынесет решение в течение 24 часов.</p>
-          <div class="bcard-line"></div>
+      </div>
+      <div class="srv-row reveal reveal-delay-3">
+        <div class="srv-icon">↩️</div>
+        <div class="srv-text">
+          <h3>Гарантия возврата</h3>
+          <p>Товар не соответствует описанию? Деньги вернутся на ваш счёт в течение 3 дней.</p>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ═══════════════ SOCIAL PROOF ═══════════════ -->
-  <section class="proof-section" id="proof">
-    <div class="container">
-      <div class="proof-header reveal">
-        <div class="section-eyebrow">Реальные истории</div>
-        <h2 class="section-title">Покупатели говорят<br>за <em>себя</em></h2>
+<!-- ══ ОТЗЫВЫ ══ -->
+<section class="proof-section" id="proof">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="ghost-label">ОТЗЫВЫ</div>
+      <div class="eyebrow">Реальные истории</div>
+      <h2 class="sec-title">Покупатели говорят<br>за <em>себя</em></h2>
+    </div>
+
+    <div class="reviews-grid">
+      <div class="review reveal">
+        <div class="review-top">
+          <div class="ava">ЕҚ</div>
+          <div>
+            <div class="r-name">Ерлан Қ.</div>
+            <div class="r-meta">Астана · Диван 3-местный</div>
+          </div>
+          <div class="r-stars">★★★★★</div>
+        </div>
+        <p>«Наконец-то купил диван на 120к без страха. Деньги держались в системе пока я не проверил доставку. Всё пришло точно по описанию.»</p>
       </div>
+      <div class="review review-featured reveal reveal-delay-1">
+        <div class="review-top">
+          <div class="ava">МС</div>
+          <div>
+            <div class="r-name">Меруерт С.</div>
+            <div class="r-meta">Тараз · Кухонный гарнитур</div>
+          </div>
+          <div class="r-stars">★★★★★</div>
+        </div>
+        <p>«Раньше боялась покупать мебель онлайн — один раз уже обожглась. Здесь всё иначе: поставщик верифицирован, условия зафиксированы. Заказала гарнитур на 280к — всё отлично.»</p>
+        <div class="r-deal">Сделка: 280 000 ₸</div>
+      </div>
+      <div class="review reveal reveal-delay-2">
+        <div class="review-top">
+          <div class="ava">НН</div>
+          <div>
+            <div class="r-name">Нұрсұлтан Н.</div>
+            <div class="r-meta">Продавец · 4.9★ · 320 сделок</div>
+          </div>
+          <div class="r-stars">★★★★★</div>
+        </div>
+        <p>«Благодаря высокому рейтингу мои продажи выросли в 3 раза за полгода. Честная конкуренция — наконец-то.»</p>
+      </div>
+    </div>
 
-      <div class="proof-grid">
-        <div class="review-card reveal">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">«Наконец-то купил диван на 120к без страха. Деньги держались в системе пока я не проверил доставку. Всё пришло точно по описанию.»</p>
-          <div class="review-author">
-            <div class="review-avatar">ЕҚ</div>
+    <!-- Числа -->
+    <div class="nums reveal">
+      <div class="num"><strong>32 000+</strong><span>Покупателей</span></div>
+      <div class="num"><strong>18 000+</strong><span>Продавцов</span></div>
+      <div class="num"><strong>₸ 4,2 млрд</strong><span>Защищено</span></div>
+      <div class="num"><strong>0 ₸</strong><span>Потеряно</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ КОНТАКТЫ ══ -->
+<section class="contact-section" id="contact">
+  <div class="contact-orb"></div>
+  <div class="container">
+    <div class="contact-grid">
+      <!-- Левая: текст + каналы -->
+      <div class="contact-left reveal">
+        <div class="eyebrow light">Напишите нам</div>
+        <h2 class="contact-title">Появились<br>вопросы или<br><em>предложения?</em></h2>
+        <p class="contact-sub">Напишите нам — ответим в течение 15 минут.</p>
+        <div class="cc-items">
+          <div class="cc-item">
+            <span class="cc-ico">📞</span>
             <div>
-              <strong>Ерлан Қ.</strong>
-              <span>Астана · Диван 3-местный</span>
+              <div class="cc-val">+7 (727) 000-00-00</div>
+              <div class="cc-hint">Пн–Пт, 9:00–18:00</div>
+            </div>
+          </div>
+          <div class="cc-item">
+            <span class="cc-ico">✉️</span>
+            <div>
+              <div class="cc-val">hello@safemebel.kz</div>
+              <div class="cc-hint">Ответим в течение 2 часов</div>
             </div>
           </div>
         </div>
-        <div class="review-card review-card-featured reveal reveal-delay-1">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">«Раньше боялась покупать мебель онлайн — один раз уже обожглась. Здесь всё иначе: поставщик верифицирован, условия зафиксированы, деньги вернулись бы в случае проблем. Заказала кухонный гарнитур на 280к — всё отлично.»</p>
-          <div class="review-author">
-            <div class="review-avatar">МС</div>
-            <div>
-              <strong>Меруерт С.</strong>
-              <span>Тараз · Кухонный гарнитур</span>
-            </div>
-          </div>
-          <div class="review-amount">Сделка: 280 000 ₸</div>
-        </div>
-        <div class="review-card reveal reveal-delay-2">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">«Я поставщик. Благодаря высокому рейтингу мои продажи выросли в 3 раза за полгода. Честная конкуренция.»</p>
-          <div class="review-author">
-            <div class="review-avatar">НН</div>
-            <div>
-              <strong>Нұрсұлтан Н.</strong>
-              <span>Продавец · 4.9 ★ · 320 сделок</span>
-            </div>
-          </div>
+        <div class="cc-socials">
+          <a href="#">VK</a>
+          <a href="https://t.me/">TG</a>
+          <a href="#">WA</a>
         </div>
       </div>
-
-      <div class="proof-numbers reveal">
-        <div class="pnum">
-          <strong>32 000+</strong>
-          <span>Покупателей на платформе</span>
-        </div>
-        <div class="pnum">
-          <strong>18 000+</strong>
-          <span>Продавцов прошли верификацию</span>
-        </div>
-        <div class="pnum">
-          <strong>₸ 4,2 млрд</strong>
-          <span>Защищено через эскроу</span>
-        </div>
-        <div class="pnum">
-          <strong>0 ₸</strong>
-          <span>Потеряно покупателями</span>
+      <!-- Правая: форма -->
+      <div class="contact-form-wrap reveal reveal-delay-2">
+        <div id="contactForm" class="contact-form">
+          <p class="cf-lead">Напишите нам :)</p>
+          <div class="cf-two">
+            <input type="text" id="cfName" placeholder="Как вас зовут?"/>
+            <input type="email" id="cfEmail" placeholder="Email"/>
+          </div>
+          <input type="tel" id="cfPhone" placeholder="Телефон"/>
+          <textarea id="cfMessage" placeholder="Ваш вопрос или комментарий" rows="4"></textarea>
+          <label class="cf-agree">
+            <input type="checkbox" id="cfAgree"/>
+            <span>Согласен на <a href="#">обработку персональных данных</a></span>
+          </label>
+          <div class="cf-btns">
+            <button class="btn-fill" id="cfBuyer" onclick="ym(107230282,'reachGoal','click_try_service')">Найти мебель →</button>
+            <button class="btn-ghost-dark" id="cfSeller">Стать продавцом</button>
+          </div>
+          <div id="cfSuccess" class="cf-success">
+            <div class="cf-ok">✓</div>
+            <strong>Заявка отправлена!</strong>
+            <span>Свяжемся с вами в ближайшее время.</span>
+          </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ═══════════════ CTA ═══════════════ -->
-  <section class="cta-section" id="cta">
-    <div class="cta-bg-grid"></div>
-    <div class="cta-orb"></div>
-    <div class="container">
-      <div class="cta-inner reveal">
-        <div class="section-eyebrow light">Начните прямо сейчас</div>
-        <h2 class="cta-title">
-          Покупайте мебель<br>без <em>риска</em>
-        </h2>
-        <p class="cta-sub">Подключайтесь к безопасному маркетплейсу уже сегодня. Первый заказ — и вы поймёте разницу.</p>
-        <div class="cta-actions">
-          <a href="#" class="btn-cta-primary" data-modal="buyer">
-            <span>Найти мебель</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
-          <a href="#" class="btn-cta-ghost" data-modal="seller">Стать продавцом</a>
-        </div>
-        <div class="cta-trust">
-          <span>🔒 Ваши данные защищены</span>
-          <span>✓ Без скрытых комиссий</span>
-          <span>↩️ Возврат гарантирован</span>
-        </div>
+<!-- ══ FOOTER ══ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">Safe<em>Mebel</em></div>
+        <p>Маркетплейс мебели с безопасной сделкой.</p>
       </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <div class="footer-logo">Safe<em>Mebel</em></div>
-          <p>Маркетплейс мебели с безопасной сделкой. Вы платите только когда довольны.</p>
-          <div class="footer-socials">
-            <a href="#" aria-label="VK">VK</a>
-            <a href="https://t.me/" aria-label="TG">TG</a>
-            <a href="#" aria-label="WA">WA</a>
-          </div>
-        </div>
+      <div class="footer-cols">
         <div class="footer-col">
           <h4>Покупателям</h4>
           <ul>
             <li><a href="#">Как купить</a></li>
-            <li><a href="#">Безопасная сделка</a></li>
+            <li><a href="#">Эскроу</a></li>
             <li><a href="#">Возврат</a></li>
             <li><a href="#">FAQ</a></li>
           </ul>
@@ -354,7 +356,6 @@
           <h4>Продавцам</h4>
           <ul>
             <li><a href="#">Как продавать</a></li>
-            <li><a href="#">Верификация</a></li>
             <li><a href="#">Тарифы</a></li>
             <li><a href="#">Выплаты</a></li>
           </ul>
@@ -365,67 +366,56 @@
             <li><a href="#">О нас</a></li>
             <li><a href="#">Блог</a></li>
             <li><a href="#">Контакты</a></li>
-            <li><a href="#">Правовая информация</a></li>
           </ul>
         </div>
       </div>
-      <div class="footer-bottom">
-        <span>© 2026 SafeMebel. Все права защищены.</span>
-        <span>Политика конфиденциальности · Пользовательское соглашение</span>
-      </div>
     </div>
-  </footer>
-
-  <!-- ═══════════════ MODAL ═══════════════ -->
-  <div class="modal-overlay" id="modalOverlay">
-    <div class="modal" id="modal">
-      <button class="modal-close" id="modalClose" aria-label="Закрыть">✕</button>
-
-      <div class="modal-body" id="modalBody">
-        <div class="modal-icon" id="modalIcon">🛒</div>
-        <h3 class="modal-title" id="modalTitle">Оставьте заявку</h3>
-        <p class="modal-sub" id="modalSub">Мы свяжемся с вами в течение 15 минут</p>
-
-        <div class="form-group">
-          <label>Ваше имя</label>
-          <input type="text" id="fieldName" placeholder="Иван Иванов" autocomplete="name" />
-        </div>
-        <div class="form-group">
-          <label>Телефон</label>
-          <input type="tel" id="fieldPhone" placeholder="+7 (999) 000-00-00" autocomplete="tel" />
-        </div>
-        <div class="form-group">
-          <label>Email (необязательно)</label>
-          <input type="email" id="fieldEmail" placeholder="ivan@mail.ru" autocomplete="email" />
-        </div>
-
-        <button class="modal-submit" id="modalSubmit" onclick="ym(107230282,'reachGoal','click_try_service')">
-          <span>Отправить заявку</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </button>
-        <p class="modal-privacy">Нажимая кнопку, вы соглашаетесь с <a href="#">политикой конфиденциальности</a></p>
-      </div>
-
-      <div class="modal-success" id="modalSuccess">
-        <div class="success-icon">✓</div>
-        <h3>Заявка принята!</h3>
-        <p>Мы свяжемся с вами в ближайшее время.</p>
-        <button class="modal-submit" id="successClose">Закрыть</button>
+    <div class="footer-bottom">
+      <span>© 2026 SafeMebel</span>
+      <div class="footer-links">
+        <a href="#">Политика конфиденциальности</a>
+        <a href="#">Соглашение</a>
       </div>
     </div>
   </div>
+</footer>
 
-  <!-- ADMIN: заявки (скрыто) -->
-  <div id="leadsPanel" style="display:none; position:fixed; bottom:20px; right:20px; z-index:9999; background:#0F1420; border:1px solid #C9973A; border-radius:12px; padding:16px 20px; color:white; font-family:Inter,sans-serif; font-size:13px; max-width:300px; box-shadow:0 8px 32px rgba(0,0,0,0.5);">
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
-      <strong style="color:#C9973A;">📋 Заявки (<span id="leadsCount">0</span>)</strong>
-      <button onclick="document.getElementById('leadsPanel').style.display='none'" style="background:none;border:none;color:#888;cursor:pointer;font-size:16px;">✕</button>
+<!-- ══ MODAL ══ -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <button class="modal-close" id="modalClose">✕</button>
+    <div id="modalBody">
+      <div class="modal-icon" id="modalIcon">🛒</div>
+      <h3 class="modal-title" id="modalTitle">Оставьте заявку</h3>
+      <p class="modal-sub" id="modalSub">Мы свяжемся с вами в течение 15 минут</p>
+      <div class="form-group"><label>Имя</label><input type="text" id="fieldName" placeholder="Иван Иванов"/></div>
+      <div class="form-group"><label>Телефон</label><input type="tel" id="fieldPhone" placeholder="+7 (999) 000-00-00"/></div>
+      <div class="form-group"><label>Email</label><input type="email" id="fieldEmail" placeholder="ivan@mail.ru"/></div>
+      <button class="modal-submit" id="modalSubmit" onclick="ym(107230282,'reachGoal','click_try_service')">
+        <span>Отправить заявку</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </button>
+      <p class="modal-privacy">Нажимая кнопку, вы соглашаетесь с <a href="#">политикой конфиденциальности</a></p>
     </div>
-    <div id="leadsList" style="max-height:200px;overflow-y:auto;margin-bottom:12px;"></div>
-    <button id="exportBtn" style="width:100%;padding:8px;background:#C9973A;color:#0F1420;border:none;border-radius:8px;font-weight:700;cursor:pointer;">⬇ Скачать CSV</button>
+    <div class="modal-success" id="modalSuccess">
+      <div class="success-icon">✓</div>
+      <h3>Заявка принята!</h3>
+      <p>Мы свяжемся с вами в ближайшее время.</p>
+      <button class="modal-submit" id="successClose">Закрыть</button>
+    </div>
   </div>
-  <button id="adminBtn" title="Просмотр заявок" style="display:none; position:fixed; bottom:20px; right:20px; z-index:9998; width:48px;height:48px;border-radius:50%;background:#C9973A;border:none;cursor:pointer;font-size:20px;box-shadow:0 4px 16px rgba(201,151,58,0.4);">📋</button>
+</div>
 
-  <script src="script.js"></script>
+<div id="leadsPanel" style="display:none;position:fixed;bottom:20px;right:20px;z-index:9999;background:#111;border:1px solid #C9973A;border-radius:12px;padding:16px 20px;color:white;font-family:Inter,sans-serif;font-size:13px;max-width:300px;box-shadow:0 8px 32px rgba(0,0,0,.6);">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+    <strong style="color:#C9973A;">📋 Заявки (<span id="leadsCount">0</span>)</strong>
+    <button onclick="document.getElementById('leadsPanel').style.display='none'" style="background:none;border:none;color:#888;cursor:pointer;font-size:16px;">✕</button>
+  </div>
+  <div id="leadsList" style="max-height:200px;overflow-y:auto;margin-bottom:12px;"></div>
+  <button id="exportBtn" style="width:100%;padding:8px;background:#C9973A;color:#0a0a0f;border:none;border-radius:8px;font-weight:700;cursor:pointer;">⬇ Скачать CSV</button>
+</div>
+<button id="adminBtn" style="display:none;position:fixed;bottom:20px;right:20px;z-index:9998;width:48px;height:48px;border-radius:50%;background:#C9973A;border:none;cursor:pointer;font-size:20px;">📋</button>
+
+<script src="script.js"></script>
 </body>
 </html>
