@@ -8,6 +8,7 @@ document.querySelectorAll('.module__header').forEach(header => {
   });
 });
 
+
 // Open first module by default
 const firstModule = document.querySelector('.module');
 if (firstModule) firstModule.classList.add('open');
