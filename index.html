@@ -1,421 +1,319 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SafeMebel — Маркетплейс мебели с безопасной сделкой</title>
-  <link rel="stylesheet" href="style.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
-  <script type="text/javascript">
-    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=107230282','ym');
-    ym(107230282,'init',{ssr:true,webvisor:true,clickmap:true,ecommerce:"dataLayer",referrer:document.referrer,url:location.href,accurateTrackBounce:true,trackLinks:true});
-  </script>
-  <noscript><div><img src="https://mc.yandex.ru/watch/107230282" style="position:absolute;left:-9999px;" alt=""/></div></noscript>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TalapAI — онлайн-курс</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<div class="cursor" id="cursor"></div>
-<div class="cursor-follower" id="cursorFollower"></div>
-
-<!-- ══ NAV ══ -->
-<nav class="nav" id="nav">
-  <a href="#" class="nav-logo">
-    <span class="logo-icon">SM</span>
-    Safe<em>Mebel</em>
-  </a>
-  <ul class="nav-links">
-    <li><a href="#how">Как работает</a></li>
-    <li><a href="#catalog">Каталог</a></li>
-    <li><a href="#proof">Отзывы</a></li>
-    <li><a href="#contact">Контакты</a></li>
-  </ul>
-  <div class="nav-right">
-    <a href="#" class="nav-ghost" data-modal="seller">Продавцам</a>
-    <a href="#" class="nav-fill" data-modal="buyer">Начать →</a>
-  </div>
-  <button class="burger" id="burger" aria-label="Меню"><span></span><span></span><span></span></button>
-</nav>
-
-<div class="mobile-menu" id="mobileMenu">
-  <ul>
-    <li><a href="#how" class="mm-link">Как работает</a></li>
-    <li><a href="#catalog" class="mm-link">Каталог</a></li>
-    <li><a href="#proof" class="mm-link">Отзывы</a></li>
-    <li><a href="#contact" class="mm-link">Контакты</a></li>
-  </ul>
-  <a href="#" class="nav-fill mm-fill" data-modal="buyer">Начать →</a>
-</div>
-
-<!-- ══ HERO — чистый, без карточек ══ -->
-<section class="hero" id="hero">
-  <div class="orb orb-green"></div>
-  <div class="orb orb-purple"></div>
-  <div class="orb orb-pink"></div>
-
-  <div class="hero-inner">
-    <div class="hero-badge reveal">
-      <span class="badge-dot"></span>
-      Безопасная сделка · Казахстан
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="container nav__inner">
+      <div class="nav__logo">TalapAI</div>
+      <a href="#buy" class="btn btn--sm">Купить курс</a>
     </div>
+  </nav>
 
-    <!-- Dodo: заголовок слева, описание справа -->
-    <div class="hero-split reveal">
-      <h1 class="hero-h1">
-        SafeMebel —<br>
-        это маркетплейс<br>
-        <em>мебели</em> с эскроу
+  <!-- 1. HERO — Ценностное предложение -->
+  <section class="hero">
+    <div class="container hero__inner">
+      <div class="hero__badge">Онлайн-курс · Видео · Казахстан</div>
+      <h1 class="hero__title">
+        Освой искусственный&nbsp;интеллект<br />
+        <span class="accent">за 3 дня — с нуля</span>
       </h1>
-      <div class="hero-right-text">
-        <p>Мы создаём технологии, которые помогают покупателям мебели в Казахстане совершать безопасные сделки.</p>
-        <p>В основе — эскроу-платформа, которая гарантирует оплату только после выполнения заказа.</p>
-        <div class="hero-actions">
-          <a href="#" class="btn-fill" data-modal="buyer">Купить безопасно →</a>
-          <a href="#" class="btn-ghost" data-modal="seller">Стать продавцом</a>
+      <p class="hero__sub">
+        Без кода, без математики. Только практика,<br class="br-desk"/>
+        которую можно применить уже завтра.
+      </p>
+      <div class="hero__cta">
+        <a href="#buy" class="btn btn--lg btn--primary">Начать за 10 000 ₸</a>
+        <span class="hero__note">12 видео · доступ навсегда · обновления включены</span>
+      </div>
+      <div class="hero__stats">
+        <div class="stat">
+          <span class="stat__num">12</span>
+          <span class="stat__lbl">видео-уроков</span>
+        </div>
+        <div class="stat__divider"></div>
+        <div class="stat">
+          <span class="stat__num">3</span>
+          <span class="stat__lbl">дня программы</span>
+        </div>
+        <div class="stat__divider"></div>
+        <div class="stat">
+          <span class="stat__num">∞</span>
+          <span class="stat__lbl">доступ к материалам</span>
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- Dodo: 4 числа внизу hero -->
-    <div class="hero-stats reveal">
-      <div class="hstat"><strong>48 200+</strong><span>объявлений на платформе</span></div>
-      <div class="hstat"><strong>40+</strong><span>категорий мебели</span></div>
-      <div class="hstat"><strong>18 000+</strong><span>покупателей используют SafeMebel</span></div>
-      <div class="hstat"><strong>0 ₸</strong><span>потеряно покупателями</span></div>
+  <!-- 2. БОЛЬ — Контекст -->
+  <section class="pain section">
+    <div class="container">
+      <div class="section__label">Почему это важно</div>
+      <h2 class="section__title">Все вокруг говорят об ИИ.<br/>А ты всё ещё не знаешь, с чего начать?</h2>
+      <div class="pain__grid">
+        <div class="pain__card">
+          <div class="pain__icon">😤</div>
+          <p>«Пробовал ChatGPT — не понял, как правильно спрашивать. Бросил.»</p>
+        </div>
+        <div class="pain__card">
+          <div class="pain__icon">😰</div>
+          <p>«Прошёл курс на YouTube — куча воды, ни одной реальной задачи.»</p>
+        </div>
+        <div class="pain__card">
+          <div class="pain__icon">🤯</div>
+          <p>«Коллеги уже автоматизируют работу с ИИ. Чувствую, что отстаю.»</p>
+        </div>
+        <div class="pain__card">
+          <div class="pain__icon">😞</div>
+          <p>«Нашёл курсы — либо слишком дорого, либо на английском, либо для программистов.»</p>
+        </div>
+      </div>
+      <div class="pain__callout">
+        <strong>ИИ уже меняет рынок труда.</strong> Те, кто умеет работать с ним — делают за час то, на что раньше уходил день. И это не про программирование — это про новый способ думать и работать.
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ══ КАК РАБОТАЕТ ══ -->
-<section class="how-section" id="how">
-  <div class="container">
-    <div class="sec-head reveal">
-      <div class="ghost-label">КАК РАБОТАЕТ</div>
-      <div class="eyebrow">Решение</div>
-      <h2 class="sec-title">Как работает <em>SafeMebel</em></h2>
-      <p class="sec-sub">Четыре шага, которые делают каждую сделку защищённой</p>
-    </div>
-    <div class="how-grid">
-      <div class="how-card reveal">
-        <div class="how-num">01</div>
-        <div class="how-icon">🛒</div>
-        <h3>Выбираете товар</h3>
-        <p>Тысячи объявлений от верифицированных поставщиков с реальными рейтингами.</p>
-      </div>
-      <div class="how-card reveal reveal-delay-1">
-        <div class="how-num">02</div>
-        <div class="how-icon">🔐</div>
-        <h3>Деньги резервируются</h3>
-        <p>Оплата поступает на защищённый эскроу-счёт. Продавец видит: заказ подтверждён.</p>
-      </div>
-      <div class="how-card reveal reveal-delay-2">
-        <div class="how-num">03</div>
-        <div class="how-icon">🚚</div>
-        <h3>Продавец выполняет</h3>
-        <p>Сроки и условия зафиксированы. Вы отслеживаете каждый этап доставки.</p>
-      </div>
-      <div class="how-card reveal reveal-delay-3">
-        <div class="how-num">04</div>
-        <div class="how-icon">✅</div>
-        <h3>Вы подтверждаете</h3>
-        <p>Проверили товар — нажимаете «Подтвердить». Только тогда деньги идут продавцу.</p>
+  <!-- 3. РЕШЕНИЕ -->
+  <section class="solution section">
+    <div class="container">
+      <div class="section__label">Решение</div>
+      <h2 class="section__title">Курс, который даёт результат<br/>уже в первый день</h2>
+      <div class="solution__grid">
+        <div class="solution__item">
+          <div class="solution__num">01</div>
+          <h3>Понятно с первого урока</h3>
+          <p>Никакой математики и теории ради теории. Только то, что работает на практике прямо сейчас.</p>
+        </div>
+        <div class="solution__item">
+          <div class="solution__num">02</div>
+          <h3>Короткие видео по 10–15 минут</h3>
+          <p>Смотри в удобное время — за обедом, в транспорте. Никаких 3-часовых лекций.</p>
+        </div>
+        <div class="solution__item">
+          <div class="solution__num">03</div>
+          <h3>Реальные задачи из жизни</h3>
+          <p>Тексты, письма, анализ данных, автоматизация рутины — всё на примерах из твоей работы.</p>
+        </div>
+        <div class="solution__item">
+          <div class="solution__num">04</div>
+          <h3>Обновления раз в квартал</h3>
+          <p>ИИ меняется быстро. Курс обновляется вместе с ним — ты всегда в актуальном контексте.</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ══ КАТАЛОГ — категории без лишних карточек ══ -->
-<section class="catalog-section" id="catalog">
-  <div class="container">
-    <div class="sec-head reveal">
-      <div class="ghost-label">КАТАЛОГ</div>
-      <div class="eyebrow">Категории</div>
-      <h2 class="sec-title">Какую мебель<br>вы <em>ищете?</em></h2>
-    </div>
-    <div class="cat-list">
-      <a class="cat-row reveal" href="#" data-modal="buyer">
-        <div class="cat-row-left">
-          <span class="cat-ico">🛋️</span>
-          <span class="cat-row-name">Гостиная</span>
-        </div>
-        <span class="cat-row-desc">Диваны, кресла, тумбы, стеллажи</span>
-        <span class="cat-row-arrow">→</span>
-      </a>
-      <a class="cat-row reveal reveal-delay-1" href="#" data-modal="buyer">
-        <div class="cat-row-left">
-          <span class="cat-ico">🛏️</span>
-          <span class="cat-row-name">Спальня</span>
-        </div>
-        <span class="cat-row-desc">Кровати, шкафы, комоды, тумбочки</span>
-        <span class="cat-row-arrow">→</span>
-      </a>
-      <a class="cat-row reveal reveal-delay-2" href="#" data-modal="buyer">
-        <div class="cat-row-left">
-          <span class="cat-ico">🍽️</span>
-          <span class="cat-row-name">Кухня</span>
-        </div>
-        <span class="cat-row-desc">Гарнитуры, столы, стулья</span>
-        <span class="cat-row-arrow">→</span>
-      </a>
-      <a class="cat-row reveal reveal-delay-3" href="#" data-modal="buyer">
-        <div class="cat-row-left">
-          <span class="cat-ico">💼</span>
-          <span class="cat-row-name">Офис</span>
-        </div>
-        <span class="cat-row-desc">Кресла, столы, стеллажи</span>
-        <span class="cat-row-arrow">→</span>
-      </a>
-      <a class="cat-row cat-row-all reveal" href="#" data-modal="buyer">
-        <div class="cat-row-left">
-          <span class="cat-ico">✦</span>
-          <span class="cat-row-name">Все категории</span>
-        </div>
-        <span class="cat-row-desc">48 200+ объявлений на платформе</span>
-        <span class="cat-row-arrow">→</span>
-      </a>
-    </div>
-  </div>
-</section>
+  <!-- 4. ПРОГРАММА -->
+  <section class="program section" id="program">
+    <div class="container">
+      <div class="section__label">Программа</div>
+      <h2 class="section__title">12 уроков · 3 дня</h2>
+      <div class="modules">
 
-<!-- ══ ПРЕИМУЩЕСТВА — простой список 2×2 ══ -->
-<section class="benefits-section" id="benefits">
-  <div class="container">
-    <div class="sec-head reveal">
-      <div class="ghost-label">СЕРВИС</div>
-      <div class="eyebrow">Почему SafeMebel</div>
-      <h2 class="sec-title">Больше чем <em>платформа</em></h2>
-    </div>
-    <div class="srv-grid">
-      <div class="srv-row reveal">
-        <div class="srv-icon">🔐</div>
-        <div class="srv-text">
-          <h3>Эскроу-защита</h3>
-          <p>Деньги хранятся на нейтральном счёте до тех пор, пока вы не подтвердите получение.</p>
-        </div>
-      </div>
-      <div class="srv-row reveal reveal-delay-1">
-        <div class="srv-icon">✅</div>
-        <div class="srv-text">
-          <h3>Верификация продавцов</h3>
-          <p>Каждый продавец проходит проверку документов и истории сделок. Случайных людей нет.</p>
-        </div>
-      </div>
-      <div class="srv-row reveal reveal-delay-2">
-        <div class="srv-icon">⭐</div>
-        <div class="srv-text">
-          <h3>Реальные рейтинги</h3>
-          <p>Отзывы оставляют только те, кто завершил сделку. Накрутка технически невозможна.</p>
-        </div>
-      </div>
-      <div class="srv-row reveal reveal-delay-3">
-        <div class="srv-icon">↩️</div>
-        <div class="srv-text">
-          <h3>Гарантия возврата</h3>
-          <p>Товар не соответствует описанию? Деньги вернутся на ваш счёт в течение 3 дней.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══ ОТЗЫВЫ ══ -->
-<section class="proof-section" id="proof">
-  <div class="container">
-    <div class="sec-head reveal">
-      <div class="ghost-label">ОТЗЫВЫ</div>
-      <div class="eyebrow">Реальные истории</div>
-      <h2 class="sec-title">Покупатели говорят<br>за <em>себя</em></h2>
-    </div>
-
-    <div class="reviews-grid">
-      <div class="review reveal">
-        <div class="review-top">
-          <div class="ava">ЕҚ</div>
-          <div>
-            <div class="r-name">Ерлан Қ.</div>
-            <div class="r-meta">Астана · Диван 3-местный</div>
+        <div class="module">
+          <div class="module__header">
+            <div class="module__badge" style="background:#2a1f5e;color:#a99ef5">Модуль 1</div>
+            <div class="module__title">Понять ИИ — без лишней теории</div>
+            <div class="module__toggle">+</div>
           </div>
-          <div class="r-stars">★★★★★</div>
-        </div>
-        <p>«Наконец-то купил диван на 120к без страха. Деньги держались в системе пока я не проверил доставку. Всё пришло точно по описанию.»</p>
-      </div>
-      <div class="review review-featured reveal reveal-delay-1">
-        <div class="review-top">
-          <div class="ava">МС</div>
-          <div>
-            <div class="r-name">Меруерт С.</div>
-            <div class="r-meta">Тараз · Кухонный гарнитур</div>
+          <div class="module__body">
+            <div class="lesson"><span class="lesson__num">01</span><span>Что такое ИИ — объяснение за 10 минут</span></div>
+            <div class="lesson"><span class="lesson__num">02</span><span>Как работает ChatGPT и Claude изнутри</span></div>
+            <div class="lesson"><span class="lesson__num">03</span><span>Что ИИ умеет, а что — нет. Честно.</span></div>
           </div>
-          <div class="r-stars">★★★★★</div>
         </div>
-        <p>«Раньше боялась покупать мебель онлайн — один раз уже обожглась. Здесь всё иначе: поставщик верифицирован, условия зафиксированы. Заказала гарнитур на 280к — всё отлично.»</p>
-        <div class="r-deal">Сделка: 280 000 ₸</div>
-      </div>
-      <div class="review reveal reveal-delay-2">
-        <div class="review-top">
-          <div class="ava">НН</div>
-          <div>
-            <div class="r-name">Нұрсұлтан Н.</div>
-            <div class="r-meta">Продавец · 4.9★ · 320 сделок</div>
+
+        <div class="module">
+          <div class="module__header">
+            <div class="module__badge" style="background:#0f3d2e;color:#5dd4a8">Модуль 2</div>
+            <div class="module__title">Промпты — как разговаривать с ИИ</div>
+            <div class="module__toggle">+</div>
           </div>
-          <div class="r-stars">★★★★★</div>
+          <div class="module__body">
+            <div class="lesson"><span class="lesson__num">04</span><span>Почему одни запросы работают, другие — нет</span></div>
+            <div class="lesson"><span class="lesson__num">05</span><span>Шаблоны промптов для работы и жизни</span></div>
+            <div class="lesson"><span class="lesson__num">06</span><span>Практика: разбираем 10 реальных задач</span></div>
+          </div>
         </div>
-        <p>«Благодаря высокому рейтингу мои продажи выросли в 3 раза за полгода. Честная конкуренция — наконец-то.»</p>
+
+        <div class="module">
+          <div class="module__header">
+            <div class="module__badge" style="background:#3d1a0a;color:#f0875a">Модуль 3</div>
+            <div class="module__title">ИИ-инструменты для работы</div>
+            <div class="module__toggle">+</div>
+          </div>
+          <div class="module__body">
+            <div class="lesson"><span class="lesson__num">07</span><span>Топ-5 ИИ-инструментов 2025 года</span></div>
+            <div class="lesson"><span class="lesson__num">08</span><span>Автоматизация рутины: тексты, письма, отчёты</span></div>
+            <div class="lesson"><span class="lesson__num">09</span><span>ИИ для изображений, данных и презентаций</span></div>
+          </div>
+        </div>
+
+        <div class="module">
+          <div class="module__header">
+            <div class="module__badge" style="background:#0c2a4a;color:#6ab4f5">Модуль 4</div>
+            <div class="module__title">Применить в своей работе</div>
+            <div class="module__toggle">+</div>
+          </div>
+          <div class="module__body">
+            <div class="lesson"><span class="lesson__num">10</span><span>Твой первый ИИ-проект — пошагово</span></div>
+            <div class="lesson"><span class="lesson__num">11</span><span>Как объяснить ценность ИИ коллегам и руководству</span></div>
+            <div class="lesson"><span class="lesson__num">12</span><span>Система: как не отставать, когда ИИ меняется каждый месяц</span></div>
+          </div>
+        </div>
+
       </div>
     </div>
+  </section>
 
-    <!-- Числа -->
-    <div class="nums reveal">
-      <div class="num"><strong>32 000+</strong><span>Покупателей</span></div>
-      <div class="num"><strong>18 000+</strong><span>Продавцов</span></div>
-      <div class="num"><strong>₸ 4,2 млрд</strong><span>Защищено</span></div>
-      <div class="num"><strong>0 ₸</strong><span>Потеряно</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- ══ КОНТАКТЫ ══ -->
-<section class="contact-section" id="contact">
-  <div class="contact-orb"></div>
-  <div class="container">
-    <div class="contact-grid">
-      <!-- Левая: текст + каналы -->
-      <div class="contact-left reveal">
-        <div class="eyebrow light">Напишите нам</div>
-        <h2 class="contact-title">Появились<br>вопросы или<br><em>предложения?</em></h2>
-        <p class="contact-sub">Напишите нам — ответим в течение 15 минут.</p>
-        <div class="cc-items">
-          <div class="cc-item">
-            <span class="cc-ico">📞</span>
+  <!-- 5. ОТЗЫВЫ -->
+  <section class="reviews section" id="reviews">
+    <div class="container">
+      <div class="section__label">Отзывы</div>
+      <h2 class="section__title">Что говорят те, кто уже прошёл</h2>
+      <div class="reviews__grid">
+        <div class="review__card">
+          <div class="review__stars">★★★★★</div>
+          <p class="review__text">«За первые 30 минут я уже использовал ИИ, чтобы написать коммерческое предложение. Раньше это занимало полдня.»</p>
+          <div class="review__author">
+            <div class="review__avatar">АК</div>
             <div>
-              <div class="cc-val">+7 (727) 000-00-00</div>
-              <div class="cc-hint">Пн–Пт, 9:00–18:00</div>
-            </div>
-          </div>
-          <div class="cc-item">
-            <span class="cc-ico">✉️</span>
-            <div>
-              <div class="cc-val">hello@safemebel.kz</div>
-              <div class="cc-hint">Ответим в течение 2 часов</div>
+              <div class="review__name">Асхат К.</div>
+              <div class="review__role">Менеджер по продажам, Алматы</div>
             </div>
           </div>
         </div>
-        <div class="cc-socials">
-          <a href="#">VK</a>
-          <a href="https://t.me/">TG</a>
-          <a href="#">WA</a>
+        <div class="review__card">
+          <div class="review__stars">★★★★★</div>
+          <p class="review__text">«Наконец-то курс без воды. Объясняется простым языком, без математики. Я не технарь — и всё равно всё понял.»</p>
+          <div class="review__author">
+            <div class="review__avatar">ДМ</div>
+            <div>
+              <div class="review__name">Данияр М.</div>
+              <div class="review__role">HR-директор, Астана</div>
+            </div>
+          </div>
         </div>
-      </div>
-      <!-- Правая: форма -->
-      <div class="contact-form-wrap reveal reveal-delay-2">
-        <div id="contactForm" class="contact-form">
-          <p class="cf-lead">Напишите нам :)</p>
-          <div class="cf-two">
-            <input type="text" id="cfName" placeholder="Как вас зовут?"/>
-            <input type="email" id="cfEmail" placeholder="Email"/>
+        <div class="review__card">
+          <div class="review__stars">★★★★★</div>
+          <p class="review__text">«Коллеги удивляются, как быстро я теперь готовлю отчёты. ИИ реально экономит 2–3 часа в день.»</p>
+          <div class="review__author">
+            <div class="review__avatar">ЗН</div>
+            <div>
+              <div class="review__name">Зарина Н.</div>
+              <div class="review__role">Финансовый аналитик, Алматы</div>
+            </div>
           </div>
-          <input type="tel" id="cfPhone" placeholder="Телефон"/>
-          <textarea id="cfMessage" placeholder="Ваш вопрос или комментарий" rows="4"></textarea>
-          <label class="cf-agree">
-            <input type="checkbox" id="cfAgree"/>
-            <span>Согласен на <a href="#">обработку персональных данных</a></span>
-          </label>
-          <div class="cf-btns">
-            <button class="btn-fill" id="cfBuyer" onclick="ym(107230282,'reachGoal','click_try_service')">Найти мебель →</button>
-            <button class="btn-ghost-dark" id="cfSeller">Стать продавцом</button>
+        </div>
+        <div class="review__card">
+          <div class="review__stars">★★★★★</div>
+          <p class="review__text">«Боялась, что буду ничего не понимать — я не из IT. Но всё объяснено так, что даже интересно стало. Спасибо!»</p>
+          <div class="review__author">
+            <div class="review__avatar">МА</div>
+            <div>
+              <div class="review__name">Мадина А.</div>
+              <div class="review__role">Маркетолог, Шымкент</div>
+            </div>
           </div>
-          <div id="cfSuccess" class="cf-success">
-            <div class="cf-ok">✓</div>
-            <strong>Заявка отправлена!</strong>
-            <span>Свяжемся с вами в ближайшее время.</span>
+        </div>
+        <div class="review__card">
+          <div class="review__stars">★★★★★</div>
+          <p class="review__text">«Лучшие 10 000 тенге, которые я потратил в этом году. Окупилось за первую неделю применения.»</p>
+          <div class="review__author">
+            <div class="review__avatar">БТ</div>
+            <div>
+              <div class="review__name">Бауыржан Т.</div>
+              <div class="review__role">Предприниматель, Алматы</div>
+            </div>
+          </div>
+        </div>
+        <div class="review__card">
+          <div class="review__stars">★★★★★</div>
+          <p class="review__text">«После курса понял: ИИ — это не страшно. Это просто инструмент. И теперь я умею им пользоваться.»</p>
+          <div class="review__author">
+            <div class="review__avatar">ЕС</div>
+            <div>
+              <div class="review__name">Ерлан С.</div>
+              <div class="review__role">Юрист, Астана</div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ══ FOOTER ══ -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <div class="footer-logo">Safe<em>Mebel</em></div>
-        <p>Маркетплейс мебели с безопасной сделкой.</p>
+  <!-- 6. CTA — КУПИТЬ -->
+  <section class="buy section" id="buy">
+    <div class="container">
+      <div class="section__label">Стоимость</div>
+      <h2 class="section__title">Один раз — пользуешься всегда</h2>
+      <div class="pricing__card">
+        <div class="pricing__top">
+          <div class="pricing__name">TalapAI</div>
+          <div class="pricing__price">
+            <span class="pricing__amount">10 000</span>
+            <span class="pricing__currency">₸</span>
+          </div>
+          <div class="pricing__once">разовый платёж · доступ навсегда</div>
+        </div>
+        <ul class="pricing__features">
+          <li><span class="check">✓</span> 12 видео-уроков (10–15 мин каждый)</li>
+          <li><span class="check">✓</span> Практические задания к каждому модулю</li>
+          <li><span class="check">✓</span> Обновления курса раз в квартал</li>
+          <li><span class="check">✓</span> Доступ к Telegram-сообществу</li>
+          <li><span class="check">✓</span> Бессрочный доступ к материалам</li>
+          <li><span class="check">✓</span> Шаблоны промптов для скачивания</li>
+        </ul>
+        <a href="#" class="btn btn--lg btn--primary btn--full" id="buy-btn">Купить курс за 10 000 ₸</a>
+        <p class="pricing__guarantee">
+          🔒 Гарантия возврата 7 дней. Не подошло — вернём деньги без вопросов.
+        </p>
       </div>
-      <div class="footer-cols">
-        <div class="footer-col">
-          <h4>Покупателям</h4>
-          <ul>
-            <li><a href="#">Как купить</a></li>
-            <li><a href="#">Эскроу</a></li>
-            <li><a href="#">Возврат</a></li>
-            <li><a href="#">FAQ</a></li>
-          </ul>
+      <div class="faq">
+        <h3 class="faq__title">Частые вопросы</h3>
+        <div class="faq__item">
+          <div class="faq__q">Нужны ли технические знания?</div>
+          <div class="faq__a">Нет. Курс создан для людей без опыта в IT. Всё объясняется с нуля, простым языком.</div>
         </div>
-        <div class="footer-col">
-          <h4>Продавцам</h4>
-          <ul>
-            <li><a href="#">Как продавать</a></li>
-            <li><a href="#">Тарифы</a></li>
-            <li><a href="#">Выплаты</a></li>
-          </ul>
+        <div class="faq__item">
+          <div class="faq__q">Сколько времени нужно в день?</div>
+          <div class="faq__a">15–20 минут в день. Уроки короткие — смотри в удобное время.</div>
         </div>
-        <div class="footer-col">
-          <h4>Компания</h4>
-          <ul>
-            <li><a href="#">О нас</a></li>
-            <li><a href="#">Блог</a></li>
-            <li><a href="#">Контакты</a></li>
-          </ul>
+        <div class="faq__item">
+          <div class="faq__q">Что будет, если ИИ-инструменты изменятся?</div>
+          <div class="faq__a">Курс обновляется каждый квартал. Все обновления бесплатны для купивших.</div>
+        </div>
+        <div class="faq__item">
+          <div class="faq__q">Есть ли сертификат?</div>
+          <div class="faq__a">Да, выдаём сертификат о прохождении после завершения всех модулей.</div>
         </div>
       </div>
     </div>
-    <div class="footer-bottom">
-      <span>© 2026 SafeMebel</span>
-      <div class="footer-links">
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__logo">TalapAI</div>
+      <div class="footer__links">
         <a href="#">Политика конфиденциальности</a>
-        <a href="#">Соглашение</a>
+        <a href="#">Оферта</a>
+        <a href="https://t.me/" target="_blank">Telegram</a>
       </div>
+      <div class="footer__copy">© 2025 · Все права защищены</div>
     </div>
-  </div>
-</footer>
+  </footer>
 
-<!-- ══ MODAL ══ -->
-<div class="modal-overlay" id="modalOverlay">
-  <div class="modal">
-    <button class="modal-close" id="modalClose">✕</button>
-    <div id="modalBody">
-      <div class="modal-icon" id="modalIcon">🛒</div>
-      <h3 class="modal-title" id="modalTitle">Оставьте заявку</h3>
-      <p class="modal-sub" id="modalSub">Мы свяжемся с вами в течение 15 минут</p>
-      <div class="form-group"><label>Имя</label><input type="text" id="fieldName" placeholder="Иван Иванов"/></div>
-      <div class="form-group"><label>Телефон</label><input type="tel" id="fieldPhone" placeholder="+7 (999) 000-00-00"/></div>
-      <div class="form-group"><label>Email</label><input type="email" id="fieldEmail" placeholder="ivan@mail.ru"/></div>
-      <button class="modal-submit" id="modalSubmit" onclick="ym(107230282,'reachGoal','click_try_service')">
-        <span>Отправить заявку</span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      </button>
-      <p class="modal-privacy">Нажимая кнопку, вы соглашаетесь с <a href="#">политикой конфиденциальности</a></p>
-    </div>
-    <div class="modal-success" id="modalSuccess">
-      <div class="success-icon">✓</div>
-      <h3>Заявка принята!</h3>
-      <p>Мы свяжемся с вами в ближайшее время.</p>
-      <button class="modal-submit" id="successClose">Закрыть</button>
-    </div>
-  </div>
-</div>
-
-<div id="leadsPanel" style="display:none;position:fixed;bottom:20px;right:20px;z-index:9999;background:#111;border:1px solid #C9973A;border-radius:12px;padding:16px 20px;color:white;font-family:Inter,sans-serif;font-size:13px;max-width:300px;box-shadow:0 8px 32px rgba(0,0,0,.6);">
-  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
-    <strong style="color:#C9973A;">📋 Заявки (<span id="leadsCount">0</span>)</strong>
-    <button onclick="document.getElementById('leadsPanel').style.display='none'" style="background:none;border:none;color:#888;cursor:pointer;font-size:16px;">✕</button>
-  </div>
-  <div id="leadsList" style="max-height:200px;overflow-y:auto;margin-bottom:12px;"></div>
-  <button id="exportBtn" style="width:100%;padding:8px;background:#C9973A;color:#0a0a0f;border:none;border-radius:8px;font-weight:700;cursor:pointer;">⬇ Скачать CSV</button>
-</div>
-<button id="adminBtn" style="display:none;position:fixed;bottom:20px;right:20px;z-index:9998;width:48px;height:48px;border-radius:50%;background:#C9973A;border:none;cursor:pointer;font-size:20px;">📋</button>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
