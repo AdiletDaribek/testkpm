@@ -388,7 +388,6 @@ body {
   transform: translateY(0);
 }
 
-
 /* RESPONSIVE */
 @media (max-width: 700px) {
   .hero { padding: 64px 0 48px; }
